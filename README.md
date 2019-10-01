@@ -14,20 +14,61 @@
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
+////Answer:
+
+for num in 1...10 {
+    if num < 10 {
+    print(String(num), terminator:"," )
+    } else {
+        print(String(num), terminator:" ")
+}
+}
+
+
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+////Answer:
+
+for num in 5...51 {
+    if num % 2==0 && num < 50 {
+    print(String(num), terminator:"," )
+    }
+    if num == 50 {
+        print(String(num), terminator:" ")
+    }
+}
 
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+/////Answer:
+
+for num in 1...60 {
+    if num % 10==4 && num < 54 {
+    print(String(num), terminator:"," )
+    }
+    if num == 54 {
+        print(String(num), terminator:" ")
+    }
+}
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+
+////Answer:
+
+let greeting = "Hello World!"
+
+for char in greeting {
+    print(String(char))
+}
 
 ***
 ## Question 5
@@ -36,6 +77,16 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+////Answer:
+
+let myStringSeven = "Hello World!"
+
+
+let lastsymbol = myStringSeven.endIndex
+let lastCharacterIndex = myStringSeven.index(before: lastsymbol)
+let lastCharacter = myStringSeven[lastCharacterIndex]
+print("The last character in \(myStringSeven) is" , lastCharacter)
+
 ***
 ## Question 6
 
@@ -43,6 +94,14 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
 
+////Answer:
+let string1 = "i have many character"
+let string2 = "i don't have a lot"
+
+for char in string2 {
+if string2.count % 2==0 {
+print(char)
+}
 ***
 ## Question 7
 
