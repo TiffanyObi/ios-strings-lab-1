@@ -95,32 +95,104 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is odd, print out every other character.
 
 ////Answer:
-let string1 = "i have many character"
-let string2 = "i don't have a lot"
+let Message = "Good Afternoon!"
+print("there are \(Message.count) characters in the string")
 
-for char in string2 {
-if string2.count % 2==0 {
-print(char)
+if Message.count % 2 == 0 {
+    print("string is even")
+}else{
+    print("string is odd")
+}
+
+// this part answer the question specifically
+
+switch Message {
+case Message where Message.count % 2 == 0:
+    for char in Message {
+        print(char, terminator:" ")
+    }
+default:
+    for (index,char) in Message.enumerated()
+        where index % 2 == 1{
+            print(char, terminator:" ")
+}
 }
 ***
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
+var char = Character("c")
+print("\(char)")
+
 ***
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+/////Answer:
+var one = "one"
+var one1 = "\u{006F}\u{006E}\u{0065}"
+
+if one==one1 {
+print("they are the same")
+}else{
+print("sorry you messed up")
+}
+
+var two = "two"
+var two2 = "\u{0074}\u{0077}\u{006F}"
+
+if two==two2 {
+print("they are the same")
+}else{
+print("sorry you messed up")
+}
+
+var three = "three"
+var three3 = "\u{0074}\u{0068}\u{0072}\u{0065}\u{0065}"
+
+if three==three3 {
+print("they are the same")
+}else{
+print("sorry you messed up")
+}
+
+var four = "four"
+var four4 = "\u{0066}\u{006F}\u{0075}\u{0072}"
+
+if one==one1 {
+print("they are the same")
+}else{
+print("sorry you messed up")
+}
+
+var five = "five"
+var five5 = "\u{0066}\u{0069}\u{0076}\u{0065}"
+
+if five==five5 {
+print("they are the same")
+}else{
+print("sorry you messed up")
+}
+
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
+/////Answer:
+
+var helloWorld = "\u{0048}\u{0045}\u{004C}\u{004C}\u{004F}" + " " + "\u{0057}\u{004F}\u{0052}\u{004C}\u{0044}\u{0021}"
+print("\(helloWorld)")
 
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
+////Answer:
+
+let Tiffany = "\u{0054}\u{0069}\u{0066}\u{0066}\u{0061}\u{006E}\u{0079}"
+print("\(Tiffany)")
 
 ***
 ## Question 11
@@ -148,7 +220,20 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
+
+
 ```
+let rose = "| \u{2698}"
+let box = "- - - - - - - - - - -"
+
+print("\(box)")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(rose)","\(rose)","\(rose)","\(rose)","\(rose)", terminator:" |\n")
+print("\(box)")
 
 ***
 ## Question 13
@@ -203,7 +288,13 @@ Input:
 
 Output:
 `"olleH"`
-
+///Answser:
+var aString = "this string has 29 characters"
+var empty = " "
+for letter in aString {
+empty = String(letter) + empty
+}
+print(empty)
 
 ## 16. Mad-Libs! Add a value to the declared variables below in playgrounds. Insert the variables (already in correct order) inside the stringmadLib and print. 
 
@@ -228,6 +319,18 @@ be \() miles an hour, and the high temperature should
 be around \() degrees. So, if you're going out, you had
 better plan on wearing your \()".
 ```
+///// Answer:
+var geographicLocation = "Brooklyn"
+var adjective1 = "cool"
+var pluralNoun1 = "sun showers"
+var adjective2 = "strong"
+var pluralNoun2 = "showers"
+var number1 = 15
+var number2 = 70
+var articleOfClothing = "hoodie"
+
+var madLib = "Here is tomorrow's weather report for \(geographicLocation) and vicinity. Early tomorrow, a \(adjective1)-front will collide with a mass of hot \(pluralNoun1) moving from the north. This means we can expect \(adjective2) winds and occasional \(pluralNoun2) by late afternoon. Wind velocity will be \(number1) miles an hour, and the high temperature should be around \(number2) degrees. So, if you're going out, you had better plan on wearing your \(articleOfClothing)."
+print("\(madLib)")
 
 ***
 
