@@ -251,7 +251,11 @@ Chess Board:
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
+let whitePawn = "\u{2659}"
+let blackPawn = "\u{265F}"
 
+let blackCastle = "\u{265C}" +""+"\u{265E}+""+ +""+"\u{265E}""+ "\u{265C}"
+//will.finish.later
 ***
 ## Question 14
 
@@ -260,17 +264,29 @@ You are given a string stored in the variable `aString`. Create new string named
 ```swift
 var aString = "Replace the letter e with *"
 // Your code here
+
+var replacedString = ""
+for char in 
  ```
+Answer:
+var aString = "Replace the letter e with *"
+// Your code here
 
-Example:
+var replacedString = ""
 
-Input:
-`var aString = "Replace the letter e with *"`
+for char in aString {
+   let character = "\(char)"
+    if character == "e" {
+        replacedString = replacedString + "*"
+    } else {
+        replacedString = replacedString + "\(character)"
+    }
+    
+}
 
-Expected values:
-`replacedString = "R*plac* th* l*tt*r * with *"`
-
+print(replacedString)
 ***
+
 ## Question 15
 
 You are given a string stored in variable `aString`. Create a new string called `reverse` that contains the original string in reverse order. Print the reversed string.
@@ -288,10 +304,11 @@ Input:
 
 Output:
 `"olleH"`
+
 ///Answser:
-var aString = "this string has 29 characters"
-var empty = " "
-for letter in aString {
+var aString2 = "this string has 29 characters"
+var empty = ""
+for letter in aString2 {
 empty = String(letter) + empty
 }
 print(empty)
@@ -346,20 +363,24 @@ let aString = "anutforajaroftuna"
 
 // Your code here
 ```
+Answer:
+let aString3 = "anutforajaroftuna"
 
-Example 1:
-Input:
-`var aString = "anutforajaroftuna"`
+var aString3Backwards = ""
+var isAPalindrom: Bool
 
-Output:
-`true`
+for char in aString3{
+    aString3Backwards = String(char) + aString3Backwards
+}
 
-Example 2:
-Input:
-`var aString = "Hello"`
+if aString3Backwards == aString3 {
+    isAPalindrom = true
+    print("This is a Palindrome")
+}else{
+    isAPalindrom = false
+    print("This is not a Palindrome")
 
-Output:
-`false`
+}
 
 ***
 ## Question 2
@@ -402,13 +423,21 @@ var problem = "find the longest word in the problem description"
 // Your code here
 ```
 
-Example:
-Input:
-`var problem = "find the longest word in the problem description"`
+var problem = "find the longest word in the problem description"
 
-Output:
-`description`
+var wordArray:[String] = []
+var wordCount = 0
+wordArray = problem.components(separatedBy: " ")
 
+//print(wordArray)
+
+for word in wordArray {
+    if word.count > wordCount {
+        wordCount = word.count
+        print("\(word) is the longest word! It has \(wordCount) letters")
+    }
+    
+}
 Hint: Keep track of the longest word you encounter and also keep track of its length.
 
 ***
@@ -421,7 +450,25 @@ let vowels = "aeiou"
 let consonants = "bcdfghjklmnpqrstvwxyz"
 let input = "Count how many vowels I have!"
 ```
+Answer:
 
+let vowels = "aeiou"
+let consonants = "bcdfghjklmnpqrstvwxyz"
+let input = "Count how many vowels I have!"
+var vowelCount = 0
+var consoCount = 0
+
+for (letter) in input {
+    if vowels.contains(letter){
+         vowelCount += 1
+        
+    } else if consonants.contains(letter){
+        consoCount += 1
+    }
+
+}
+var tuple = (vowelCount,consoCount)
+print("this sentence has \(tuple.0) vowels, and \(tuple.1) consonants!")
 ***
 ## Question 5
 
